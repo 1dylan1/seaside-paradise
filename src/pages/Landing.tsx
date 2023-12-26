@@ -112,7 +112,8 @@ function RoomCard({section}: {section: roomCardType}) {
         setHovered(false);
         setCurrentImageIndex(0); // Set back to the default image on leave
     };
-
+    console.log(hovered);
+    
     return (
         <div style={{ display: "flex", flexDirection: "column", width: "400px", height: "490px", margin: "15px" }}>
             <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{ backgroundImage: `url(${section.images[currentImageIndex]})`,
