@@ -1,7 +1,7 @@
 
 
 import { useNavigate } from "react-router-dom";
-import { AppBar, Toolbar, IconButton, Button, Drawer, List, ListItem, useMediaQuery, Typography } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Button, Drawer, List, ListItem, useMediaQuery } from '@mui/material';
 import { useState, useEffect } from "react";
 import logo from "../assets/seaside_resort.png";
 import transLogo from "../assets/Seaside_Paradise_trans.png";
