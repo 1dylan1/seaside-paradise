@@ -1,13 +1,28 @@
 import Navbar from "../components/Navbar";
 import splashPage from "../assets/landing_background_ocean.jpg";
-import roomPreviewA2 from "../assets/room_preview2.jpg";
-import roomPreviewB1 from "../assets/image_preview3.jpg"
-import roomPreviewB2 from "../assets/room_preview4.jpg"
-import roomPreviewA1 from "../assets/room_preview1.jpg";
+import roomPreviewA2 from "../assets/chalet.jpg";
+import roomPreviewB1 from "../assets/singleroom.jpg"
+import roomPreviewB2 from "../assets/single.jpg"
+import roomPreviewA1 from "../assets/chaletroom.jpg";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { AccessTime, Home, People, Phone, ChevronRight } from "@mui/icons-material";
 import { Button, Link, Typography } from "@mui/material";
 import { ReactNode, useState } from "react";
+
+//Gallery Images
+import gallery1 from "../assets/gallery_1.jpg";
+import gallery2 from "../assets/gallery_2.jpg";
+import gallery3 from "../assets/gallery_3.jpg";
+import gallery4 from "../assets/gallery_4.jpg";
+import gallery5 from "../assets/gallery_5.jpg";
+import gallery6 from "../assets/gallery_6.jpg";
+import gallery7 from "../assets/gallery_7.jpg";
+import gallery8 from "../assets/gallery_8.jpg";
+import gallery9 from "../assets/gallery_9.jpg";
+import gallery10 from "../assets/gallery_10.jpg";
+import gallery11 from "../assets/gallery_11.jpg";
+import gallery12 from "../assets/gallery_12.jpg";
+import gallery13 from "../assets/gallery_13.jpg";
 
 type infoCardType = {
     color: string,
@@ -19,8 +34,7 @@ type infoCardType = {
 type roomCardType = {
     headerText: string,
     roomTitle: string,
-    description: string,
-    price: string,
+    description: string[],
     images: string[],
 }
 
@@ -34,30 +48,18 @@ const colors =  {
 
 const roomInformation: roomCardType[] = [
     {
-        headerText: "5 Guests",
-        roomTitle: "TULIP ROOM",
-        description: "Perfect for families or groups of friends. Offers multiple bed layouts and is fully furnished.",
-        price: "299",
+        headerText: "2 Queen/ 1 Queen, 2 Single",
+        roomTitle: "CHALET",
+        description: [ "Weekday (Sun-Thurs) - RM400.00", "Weekend (Fri-Sat or PH/EVE) - RM480.00"],
         images: [
             roomPreviewA1,
             roomPreviewA2
         ],
     },
     {
-        headerText: "5 Guests",
-        roomTitle: "DAISY ROOM",
-        description: "Perfect for families or groups of friends. Offers multiple bed layouts and is fully furnished.",
-        price: "299",
-        images: [
-            roomPreviewA1,
-            roomPreviewA2
-        ],
-    },
-    {
-        headerText: "2 Guests",
-        roomTitle: "SUNFLOWER ROOM",
-        description: "Perfect for singles or couples. Offers multiple bed layouts and is fully furnished.",
-        price: "189",
+        headerText: "2 Single/ 1 Queen",
+        roomTitle: "SINGLE",
+        description: [ "Weekday (Sun-Thurs) - RM180.00", "Weekend (Fri-Sat or PH/EVE) - RM250.00"],
         images: [
             roomPreviewB1,
             roomPreviewB2
@@ -142,10 +144,12 @@ function RoomCard({section}: {section: roomCardType}) {
             </div>
             <div style={{ backgroundColor: "rgba(0,0,0,0.6)", height:"230px", width: "400px", padding: "10px", color: "white", textAlign: "left" }}>
                 <Typography variant="h6" fontWeight="bold">{section.roomTitle}</Typography>
-                <Typography variant="subtitle1">{section.description}</Typography>
+                {section.description.map((sentence) => (
+                    <Typography variant="subtitle1">{sentence}</Typography>
+                ))}
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "90%", margin: "0 auto" }}>
                     <Link sx={{ display: "flex", flexDirection: "row" }}>
-                    <Typography sx={{ textDecoration: "none", "&:hover": { cursor: "pointer", textDecoration: `underline solid ${colors.pOrange}` } }} variant="h6" color="white" fontWeight="bold">BOOK NOW FOR RM{section.price}</Typography> 
+                    <Typography sx={{ textDecoration: "none", "&:hover": { cursor: "pointer", textDecoration: `underline solid ${colors.pOrange}` } }} variant="h6" color="white" fontWeight="bold">BOOK NOW</Typography> 
                     <ChevronRight sx={{ color: colors.pOrange, marginTop: "4px" }} />
                     </Link>
                 </div>
@@ -174,7 +178,7 @@ export default function Landing() {
                 <div style={{ position: "absolute", top: "50%", left: "6%", transform: "translateY(-50%)", textAlign: "left", color: "white", width:"40%", minWidth: "370px" }}>
                     <Typography variant="h2" fontWeight="bold">Your Private Getaway By The Sea</Typography>
                     <Typography variant="h6">We are thrilled to extend a warm and heartfelt welcome to you as you step into the enchanting world of Seaside Paradise at Sematan!</Typography>
-                    <Button variant="contained" sx={{marginTop: "5px", backgroundColor: colors.pOrange, color: "white", "&:hover": {backgroundColor: "#e46a00"} }}>Book now</Button>
+                    <Button variant="contained" sx={{marginTop: "15px", backgroundColor: colors.pOrange, color: "white", "&:hover": {backgroundColor: "#e46a00"} }}>Book now</Button>
                 </div>
             </div>
             <Grid container>
