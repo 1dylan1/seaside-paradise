@@ -58,10 +58,9 @@ export default function Navbar() {
             </>
           ) : (
             <>
-              <Button sx={{fontWeight: "bold", fontSize: "1rem", marginRight: "48px;"}} onClick={() => handleNavigate("/servers")} color="inherit">Home</Button>
-              <Button sx={{fontWeight: "bold", fontSize: "1rem", marginRight: "48px;"}} onClick={() => handleNavigate("/leaderboards")} color="inherit">About us</Button>
+              <Button sx={{fontWeight: "bold", fontSize: "1rem", marginRight: "48px;"}} onClick={() => handleNavigate("/")} color="inherit">Home</Button>
               <Button sx={{fontWeight: "bold", fontSize: "1rem", marginRight: "48px;"}} href="https://midnight-studios.tebex.io" color="inherit">Rooms</Button>
-              <Button sx={{fontWeight: "bold", fontSize: "1rem", marginRight: "48px;"}} href="https://steamcommunity.com/groups/midnightstudio" color="inherit">Gallery</Button>
+              <Button sx={{fontWeight: "bold", fontSize: "1rem", marginRight: "48px;"}} href="https://steamcommunity.com/groups/midnightstudio" color="inherit">Amenities</Button>
               <Button sx={{fontWeight: "bold", fontSize: "1rem"}} href="https://steamcommunity.com/groups/midnightstudio" color="inherit">Contact</Button>
             </>
           )}

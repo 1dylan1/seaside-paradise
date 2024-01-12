@@ -1,28 +1,15 @@
 import Navbar from "../components/Navbar";
-import splashPage from "../assets/landing_background_ocean.jpg";
+import sea from "../assets/sea.mp4";
 import roomPreviewA2 from "../assets/chalet.jpg";
-import roomPreviewB1 from "../assets/singleroom.jpg"
-import roomPreviewB2 from "../assets/single.jpg"
+import roomPreviewB1 from "../assets/singleroom.jpg";
+import roomPreviewB2 from "../assets/single.jpg";
 import roomPreviewA1 from "../assets/chaletroom.jpg";
+import roombg from "../assets/rooms_bg.jpg";
+import amenity from "../assets/amenity.jpg";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { AccessTime, Home, People, Phone, ChevronRight } from "@mui/icons-material";
 import { Button, Link, Typography } from "@mui/material";
 import { ReactNode, useState } from "react";
-
-//Gallery Images
-import gallery1 from "../assets/gallery_1.jpg";
-import gallery2 from "../assets/gallery_2.jpg";
-import gallery3 from "../assets/gallery_3.jpg";
-import gallery4 from "../assets/gallery_4.jpg";
-import gallery5 from "../assets/gallery_5.jpg";
-import gallery6 from "../assets/gallery_6.jpg";
-import gallery7 from "../assets/gallery_7.jpg";
-import gallery8 from "../assets/gallery_8.jpg";
-import gallery9 from "../assets/gallery_9.jpg";
-import gallery10 from "../assets/gallery_10.jpg";
-import gallery11 from "../assets/gallery_11.jpg";
-import gallery12 from "../assets/gallery_12.jpg";
-import gallery13 from "../assets/gallery_13.jpg";
 
 type infoCardType = {
     color: string,
@@ -162,19 +149,11 @@ export default function Landing() {
 
     return (
         <>
-            <div style={{ position: "relative", width: "100%", height: "100vh", overflow: "hidden", textAlign: "center" }}>
-                <div style={{
-                    maxWidth: "100%",
-                    height: "100vh",
-                    backgroundImage: `url(${splashPage})`,
-                    backgroundSize: "cover",
-                    backgroundAttachment: "fixed",
-                    backgroundPosition: "center",
-                    boxShadow: "inset 0 0 0 100vmax rgba(0, 0, 0, .2)"
-                }}/>
-                <div style={{ position: "absolute", top: 0, left: 0, right: 0, textAlign: "center" }}>
-                    <Navbar />
-                </div>
+            <div style={{ position: "relative", width: "100%", height: "100vh", overflow: "hidden", backgroundColor: 'rgba(0, 0, 0, 0.1)'}}>
+            <video autoPlay muted loop style={{position: "fixed", zIndex: "-1", width: "100%", height: "100%", objectFit: "cover"}}>
+                <source src={sea} type="video/mp4"/>
+            </video>
+                <Navbar />
                 <div style={{ position: "absolute", top: "50%", left: "6%", transform: "translateY(-50%)", textAlign: "left", color: "white", width:"40%", minWidth: "370px" }}>
                     <Typography variant="h2" fontWeight="bold">Your Private Getaway By The Sea</Typography>
                     <Typography variant="h6">We are thrilled to extend a warm and heartfelt welcome to you as you step into the enchanting world of Seaside Paradise at Sematan!</Typography>
@@ -188,15 +167,35 @@ export default function Landing() {
                     </Grid>
                 ))}
             </Grid>
-            <div style={{ position: "relative", width: "100%", textAlign: "center", backgroundColor: colors.pDarkBlue, padding: "30px" }}>
-                        <Typography variant="h4" color="white" fontWeight="bold" sx={{marginBottom: "30px"}}>Our Rooms</Typography>
-                        <div style={{display: "flex", margin: "0 auto", justifyContent: "center"}}>
-                            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginBottom: "20px" }}>
-                                {roomInformation.map((room: roomCardType) => (
-                                    <RoomCard section={room} />
-                                ))}
-                            </div>
+            <div style={{ textAlign: "center", backgroundImage: `url(${roombg})`, backgroundPosition: "center"}}>
+                <div style={{backgroundColor: 'rgba(0, 0, 0, 0.6)', padding: "30px" }}>
+                    <Typography variant="h4" color="white" fontWeight="bold" sx={{marginBottom: "30px"}}>Our Rooms</Typography>
+                    <div style={{display: "flex", margin: "0 auto", justifyContent: "center"}}>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginBottom: "20px" }}>
+                            {roomInformation.map((room: roomCardType) => (
+                                <RoomCard section={room} />
+                            ))}
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div style={{backgroundColor: colors.pDarkBlue, padding: "30px 0px 60px 0px", textAlign: "center",}}>
+                <Typography variant="h4" color="white" fontWeight="bold">Amenities</Typography>
+                <div style={{display: "flex", justifyContent: "space-around", padding: "30px"}}>
+                    <img style={{height: "450px"}} alt="amenityImage" src={amenity}/>
+                    <ul>
+                        <li>Kitchenette</li>
+                        <li>Toiletries</li>
+                        <li>Wifi</li>
+                        <li>Parking</li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div style={{backgroundColor: colors.pLightBlue, padding: "30px", textAlign: "center",}}>
+                <Typography variant="h4" color="white" fontWeight="bold">Contact</Typography>
+                <Typography variant="h6" color="white" style={{paddingTop: "30px"}}>Call Us or Whatsapp</Typography>
+                <Typography color="white">+60 19-834 5790</Typography>
             </div>
         </>
     )
