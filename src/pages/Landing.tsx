@@ -5,11 +5,21 @@ import roomPreviewB1 from "../assets/singleroom.jpg";
 import roomPreviewB2 from "../assets/single.jpg";
 import roomPreviewA1 from "../assets/chaletroom.jpg";
 import roombg from "../assets/rooms_bg.jpg";
-import amenity from "../assets/amenity.jpg";
+import amenity from "../assets/amenity.png";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { AccessTime, Home, People, Phone, ChevronRight } from "@mui/icons-material";
-import { Button, Link, Typography } from "@mui/material";
-import { ReactNode, useState } from "react";
+import { Button, Link, Typography, useMediaQuery } from "@mui/material";
+import { ReactNode, useState, useEffect } from "react";
+
+import WifiIcon from '@mui/icons-material/Wifi';
+import HotelIcon from '@mui/icons-material/Hotel';
+import CoffeeMakerIcon from '@mui/icons-material/CoffeeMaker';
+import AirIcon from '@mui/icons-material/Air';
+import AcUnitIcon from '@mui/icons-material/AcUnit';
+import FlatwareIcon from '@mui/icons-material/Flatware';
+import MicrowaveIcon from '@mui/icons-material/Microwave';
+import ChairIcon from '@mui/icons-material/Chair';
+import KitchenIcon from '@mui/icons-material/Kitchen';
 
 type infoCardType = {
     color: string,
@@ -136,8 +146,7 @@ function RoomCard({section}: {section: roomCardType}) {
                 ))}
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "90%", margin: "0 auto" }}>
                     <Link sx={{ display: "flex", flexDirection: "row" }}>
-                    <Typography sx={{ textDecoration: "none", "&:hover": { cursor: "pointer", textDecoration: `underline solid ${colors.pOrange}` } }} variant="h6" color="white" fontWeight="bold">BOOK NOW</Typography> 
-                    <ChevronRight sx={{ color: colors.pOrange, marginTop: "4px" }} />
+                    <Button href="#contact"><Typography sx={{ textDecoration: "none", "&:hover": { cursor: "pointer", textDecoration: `underline solid ${colors.pOrange}` } }} variant="h6" color="white" fontWeight="bold">Contact to Book</Typography></Button>
                     </Link>
                 </div>
             </div>
@@ -147,9 +156,16 @@ function RoomCard({section}: {section: roomCardType}) {
 
 export default function Landing() {
 
+    const [mobileView, setMobileView] = useState(false);
+    const isMobile = useMediaQuery('(max-width:900px)');
+
+    useEffect(() => {
+        setMobileView(isMobile);
+    }, [isMobile]);
+
     return (
         <>
-            <div style={{ position: "relative", width: "100%", height: "100vh", overflow: "hidden", backgroundColor: 'rgba(0, 0, 0, 0.1)'}}>
+            <div id="home" style={{ position: "relative", width: "100%", height: "100vh", overflow: "hidden", backgroundColor: 'rgba(0, 0, 0, 0.1)'}}>
             <video autoPlay muted loop style={{position: "fixed", zIndex: "-1", width: "100%", height: "100%", objectFit: "cover"}}>
                 <source src={sea} type="video/mp4"/>
             </video>
@@ -157,7 +173,7 @@ export default function Landing() {
                 <div style={{ position: "absolute", top: "50%", left: "6%", transform: "translateY(-50%)", textAlign: "left", color: "white", width:"40%", minWidth: "370px" }}>
                     <Typography variant="h2" fontWeight="bold">Your Private Getaway By The Sea</Typography>
                     <Typography variant="h6">We are thrilled to extend a warm and heartfelt welcome to you as you step into the enchanting world of Seaside Paradise at Sematan!</Typography>
-                    <Button variant="contained" sx={{marginTop: "15px", backgroundColor: colors.pOrange, color: "white", "&:hover": {backgroundColor: "#e46a00"} }}>Book now</Button>
+                    <Button href="#contact" variant="contained" sx={{marginTop: "15px", backgroundColor: colors.pOrange, color: "white", "&:hover": {backgroundColor: "#e46a00"} }}>Book now</Button>
                 </div>
             </div>
             <Grid container>
@@ -167,7 +183,7 @@ export default function Landing() {
                     </Grid>
                 ))}
             </Grid>
-            <div style={{ textAlign: "center", backgroundImage: `url(${roombg})`, backgroundPosition: "center"}}>
+            <div id="rooms" style={{ textAlign: "center", backgroundImage: `url(${roombg})`, backgroundPosition: "center"}}>
                 <div style={{backgroundColor: 'rgba(0, 0, 0, 0.6)', padding: "30px" }}>
                     <Typography variant="h4" color="white" fontWeight="bold" sx={{marginBottom: "30px"}}>Our Rooms</Typography>
                     <div style={{display: "flex", margin: "0 auto", justifyContent: "center"}}>
@@ -179,23 +195,67 @@ export default function Landing() {
                     </div>
                 </div>
             </div>
-            <div style={{backgroundColor: colors.pDarkBlue, padding: "30px 0px 60px 0px", textAlign: "center",}}>
+            <div id="amenities" style={{backgroundColor: colors.pDarkBlue, padding: "30px 0px 60px 0px", textAlign: "center",}}>
                 <Typography variant="h4" color="white" fontWeight="bold">Amenities</Typography>
-                <div style={{display: "flex", justifyContent: "space-around", padding: "30px"}}>
-                    <img style={{height: "450px"}} alt="amenityImage" src={amenity}/>
-                    <ul>
-                        <li>Kitchenette</li>
-                        <li>Toiletries</li>
-                        <li>Wifi</li>
-                        <li>Parking</li>
-                        <li></li>
-                    </ul>
+                <div style={{backgroundImage: `url(${amenity})`, backgroundPosition: "center", backgroundSize: "cover", margin: "50px"}}>
+                    {mobileView ? (
+                        <>
+                        <div style={{padding: "30px", display: "flex", justifyContent: "center"}}>
+                            <div style={{backgroundColor: 'rgba(0, 0, 0, 0.6)', width: "fit-content", padding: "50px", textAlign: "left"}}>                           
+                                <Typography color="white" sx={{paddingBottom: "10px"}}> <HotelIcon/> Extra Mattress</Typography>
+                                <Typography color="white" sx={{paddingBottom: "10px"}}> <CoffeeMakerIcon/> Kettle</Typography>
+                                <Typography color="white" sx={{paddingBottom: "10px"}}> <AcUnitIcon/> Air Conditioning</Typography>                           
+                                <Typography color="white" sx={{paddingBottom: "10px"}}> <AirIcon/> Hair Dryer</Typography>
+                                <Typography color="white" sx={{paddingBottom: "10px"}}> <FlatwareIcon/> Dining area (Single)</Typography>
+                                <Typography color="white" sx={{paddingBottom: "10px"}}> <MicrowaveIcon/> Microwave (Chalet)</Typography>
+                                <Typography color="white" sx={{paddingBottom: "10px"}}> <ChairIcon/> Sofa (Chalet)</Typography>
+                                <Typography color="white" sx={{paddingBottom: "10px"}}> <KitchenIcon/> Mini Fridge (Chalet)</Typography>
+                            </div>    
+                         </div>
+                        </>
+                    ) : (
+                        <>
+                        <div style={{padding: "150px", display: "flex", justifyContent: "center"}}>
+                            <div style={{backgroundColor: 'rgba(0, 0, 0, 0.6)', width: "600px", display: "flex", justifyContent: "space-between", padding: "50px", textAlign: "left"}}>
+                                <div>
+                                    <Typography color="white" sx={{paddingBottom: "10px"}}> <HotelIcon/> Extra Mattress</Typography>
+                                    <Typography color="white" sx={{paddingBottom: "10px"}}> <CoffeeMakerIcon/> Kettle</Typography>
+                                    <Typography color="white" sx={{paddingBottom: "10px"}}> <AcUnitIcon/> Air Conditioning</Typography>                           
+                                    <Typography color="white" sx={{paddingBottom: "10px"}}> <AirIcon/> Hair Dryer</Typography>
+                                </div>
+                                <div>     
+                                    <Typography color="white" sx={{paddingBottom: "10px"}}> <FlatwareIcon/> Dining area (Single)</Typography>
+                                    <Typography color="white" sx={{paddingBottom: "10px"}}> <MicrowaveIcon/> Microwave (Chalet)</Typography>
+                                    <Typography color="white" sx={{paddingBottom: "10px"}}> <ChairIcon/> Sofa (Chalet)</Typography>
+                                    <Typography color="white" sx={{paddingBottom: "10px"}}> <KitchenIcon/> Mini Fridge (Chalet)</Typography>
+                                </div>
+                            </div>
+                        </div>
+                        </>
+                    )}   
+                  
                 </div>
             </div>
-            <div style={{backgroundColor: colors.pLightBlue, padding: "30px", textAlign: "center",}}>
-                <Typography variant="h4" color="white" fontWeight="bold">Contact</Typography>
-                <Typography variant="h6" color="white" style={{paddingTop: "30px"}}>Call Us or Whatsapp</Typography>
-                <Typography color="white">+60 19-834 5790</Typography>
+            <div style={{padding: "80px", textAlign: "center",}}>
+                <Typography variant="h4" color="white" fontWeight="bold">Contact Us</Typography>
+                <Typography variant="h6" color="white" style={{paddingTop: "30px"}}>Ready to book your getaway?</Typography>
+                <div id="contact" style={{display: "flex", justifyContent: "space-around"}}>
+                    <div>
+                        <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Call Us or Whatsapp</Typography>
+                        <Typography variant="h6" color="white">+60 19-834 5790</Typography>
+                    </div>
+                    <div>
+                        <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Email</Typography>
+                        <a href="mailto:seasideparadisekch@gmail.com"><Typography variant="h6" color="white">seasideparadisekch@gmail.com</Typography></a>
+                    </div>
+                    <div>
+                        <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Check In: 2:00 pm</Typography>
+                        <Typography variant="h6" color="white">Check Out: 11:30 am</Typography>
+                    </div>
+                </div>
+            </div>
+            <div style={{backgroundColor: "rgb(49, 43, 36)", padding: "15px"}}>
+                <Typography color="white">© Copyright 2024 - Seaside Paradise Sematan</Typography>
             </div>
         </>
     )

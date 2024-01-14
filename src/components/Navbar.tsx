@@ -32,10 +32,10 @@ export default function Navbar() {
   const drawer = (
     <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerToggle}>
       <List>
-        <ListItem><Button onClick={() => handleNavigate("/servers")} color="inherit">Servers</Button></ListItem>
-        <ListItem><Button onClick={() => handleNavigate("/leaderboards")} color="inherit">Stats</Button></ListItem>
-        <ListItem><Button href="https://midnight-studios.tebex.io" color="inherit">Donate</Button></ListItem>
-        <ListItem><Button href="https://steamcommunity.com/groups/midnightstudio" color="inherit">Steam Group</Button></ListItem>
+        <ListItem><Button href="#home" color="inherit">Home</Button></ListItem>
+        <ListItem><Button href="#rooms" color="inherit">Rooms</Button></ListItem>
+        <ListItem><Button href="#amenities" color="inherit">Amenities</Button></ListItem>
+        <ListItem><Button href="#contact" color="inherit">Contact</Button></ListItem>
       </List>
     </Drawer>
   );
@@ -58,10 +58,10 @@ export default function Navbar() {
             </>
           ) : (
             <>
-              <Button sx={{fontWeight: "bold", fontSize: "1rem", marginRight: "48px;"}} onClick={() => handleNavigate("/")} color="inherit">Home</Button>
-              <Button sx={{fontWeight: "bold", fontSize: "1rem", marginRight: "48px;"}} href="https://midnight-studios.tebex.io" color="inherit">Rooms</Button>
-              <Button sx={{fontWeight: "bold", fontSize: "1rem", marginRight: "48px;"}} href="https://steamcommunity.com/groups/midnightstudio" color="inherit">Amenities</Button>
-              <Button sx={{fontWeight: "bold", fontSize: "1rem"}} href="https://steamcommunity.com/groups/midnightstudio" color="inherit">Contact</Button>
+              <Button sx={{fontWeight: "bold", fontSize: "1rem", marginRight: "48px;"}} href="#home" color="inherit">Home</Button>
+              <Button sx={{fontWeight: "bold", fontSize: "1rem", marginRight: "48px;"}} href="#rooms" color="inherit">Rooms</Button>
+              <Button sx={{fontWeight: "bold", fontSize: "1rem", marginRight: "48px;"}} href="#amenities" color="inherit">Amenities</Button>
+              <Button sx={{fontWeight: "bold", fontSize: "1rem"}} href="#contact" color="inherit">Contact</Button>
             </>
           )}
         </Toolbar>
