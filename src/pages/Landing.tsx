@@ -236,23 +236,44 @@ export default function Landing() {
                   
                 </div>
             </div>
-            <div style={{padding: "80px", textAlign: "center",}}>
+            <div style={{padding: "80px", textAlign: "center", backgroundColor: 'rgba(0, 0, 0, 0.1)'}}>
                 <Typography variant="h4" color="white" fontWeight="bold">Contact Us</Typography>
                 <Typography variant="h6" color="white" style={{paddingTop: "30px"}}>Ready to book your getaway?</Typography>
-                <div id="contact" style={{display: "flex", justifyContent: "space-around"}}>
-                    <div>
-                        <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Call Us or Whatsapp</Typography>
-                        <Typography variant="h6" color="white">+60 19-834 5790</Typography>
-                    </div>
-                    <div>
-                        <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Email</Typography>
-                        <a href="mailto:seasideparadisekch@gmail.com"><Typography variant="h6" color="white">seasideparadisekch@gmail.com</Typography></a>
-                    </div>
-                    <div>
-                        <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Check In: 2:00 pm</Typography>
-                        <Typography variant="h6" color="white">Check Out: 11:30 am</Typography>
-                    </div>
-                </div>
+                {mobileView ? (
+                        <>
+                        <div id="contact" style={{}}>
+                            <div>
+                                <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Call Us or Whatsapp</Typography>
+                                <Typography variant="h6" color="white">+60 19-834 5790</Typography>
+                            </div>
+                            <div>
+                                <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Email</Typography>
+                                <a href="mailto:seasideparadisekch@gmail.com"><Typography variant="h6" color="white">seasideparadisekch@gmail.com</Typography></a>
+                            </div>
+                            <div>
+                                <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Check In: 2:00 pm</Typography>
+                                <Typography variant="h6" color="white">Check Out: 11:30 am</Typography>
+                            </div>
+                        </div>
+                        </>
+                    ) : (
+                        <>
+                        <div id="contact" style={{display: "flex", justifyContent: "space-around"}}>
+                            <div>
+                                <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Call Us or Whatsapp</Typography>
+                                <Typography variant="h6" color="white">+60 19-834 5790</Typography>
+                            </div>
+                            <div>
+                                <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Email</Typography>
+                                <a href="mailto:seasideparadisekch@gmail.com"><Typography variant="h6" color="white">seasideparadisekch@gmail.com</Typography></a>
+                            </div>
+                            <div>
+                                <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Check In: 2:00 pm</Typography>
+                                <Typography variant="h6" color="white">Check Out: 11:30 am</Typography>
+                            </div>
+                        </div>
+                        </>
+                    )}
             </div>
             <div style={{backgroundColor: "rgb(49, 43, 36)", padding: "15px"}}>
                 <Typography color="white">© Copyright 2024 - Seaside Paradise Sematan</Typography>
