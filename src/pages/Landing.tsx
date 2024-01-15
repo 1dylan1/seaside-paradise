@@ -7,11 +7,10 @@ import roomPreviewA1 from "../assets/chaletroom.jpg";
 import roombg from "../assets/rooms_bg.jpg";
 import amenity from "../assets/amenity.png";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
-import { AccessTime, Home, People, Phone, ChevronRight } from "@mui/icons-material";
+import { AccessTime, Home, People, Phone } from "@mui/icons-material";
 import { Button, Link, Typography, useMediaQuery } from "@mui/material";
 import { ReactNode, useState, useEffect } from "react";
 
-import WifiIcon from '@mui/icons-material/Wifi';
 import HotelIcon from '@mui/icons-material/Hotel';
 import CoffeeMakerIcon from '@mui/icons-material/CoffeeMaker';
 import AirIcon from '@mui/icons-material/Air';
