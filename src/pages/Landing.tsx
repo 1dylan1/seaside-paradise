@@ -243,16 +243,12 @@ export default function Landing() {
                         <>
                         <div id="contact" style={{}}>
                             <div>
-                                <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Call Us or Whatsapp</Typography>
+                                <Typography variant="h5" color="white" fontWeight="bold" style={{paddingTop: "30px"}}>Call Us or Whatsapp</Typography>
                                 <Typography variant="h6" color="white">+60 19-834 5790</Typography>
                             </div>
                             <div>
-                                <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Email</Typography>
+                                <Typography variant="h5" color="white" fontWeight="bold" style={{paddingTop: "30px"}}>Email</Typography>
                                 <a href="mailto:seasideparadisekch@gmail.com"><Typography variant="h6" color="white">seasideparadisekch@gmail.com</Typography></a>
-                            </div>
-                            <div>
-                                <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Check In: 2:00 pm</Typography>
-                                <Typography variant="h6" color="white">Check Out: 11:30 am</Typography>
                             </div>
                         </div>
                         </>
@@ -260,16 +256,12 @@ export default function Landing() {
                         <>
                         <div id="contact" style={{display: "flex", justifyContent: "space-around"}}>
                             <div>
-                                <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Call Us or Whatsapp</Typography>
-                                <Typography variant="h6" color="white">+60 19-834 5790</Typography>
+                                <Typography variant="h5" color="white" fontWeight="bold" style={{paddingTop: "30px"}}>Call Us or Whatsapp</Typography>
+                                <Typography variant="h5" color="white">+60 19-834 5790</Typography>
                             </div>
                             <div>
-                                <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Email</Typography>
-                                <a href="mailto:seasideparadisekch@gmail.com"><Typography variant="h6" color="white">seasideparadisekch@gmail.com</Typography></a>
-                            </div>
-                            <div>
-                                <Typography variant="h5" color="white" style={{paddingTop: "30px"}}>Check In: 2:00 pm</Typography>
-                                <Typography variant="h6" color="white">Check Out: 11:30 am</Typography>
+                                <Typography variant="h5" color="white" fontWeight="bold" style={{paddingTop: "30px"}}>Email</Typography>
+                                <a href="mailto:seasideparadisekch@gmail.com"><Typography variant="h5" color="white">seasideparadisekch@gmail.com</Typography></a>
                             </div>
                         </div>
                         </>
