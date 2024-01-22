@@ -67,20 +67,20 @@ const infoInformation: infoCardType[] = [
     {
         color: `${colors.pMidBlue}`,
         icon: <AccessTime sx={{ fontSize: "45px" }}/>,
-        header: "OPENING TIMES",
-        description: "Monday - Friday 09:00 - 18:00"
+        header: "BUSINESS HOURS",
+        description: "Mon - Sat, 8am - 5pm"
     },
     {
         color: `${colors.pPrimBlue}`,
         icon: <Home sx={{ fontSize: "45px" }}/>,
         header: "OUR LOCATION",
-        description: "1st Beach St, Kuching, Sarawak"
+        description: "Block 8, Pueh Land District, Lot 1040, Q529, 94100, Kuching, Sarawak"
     },
     {
         color: `${colors.pLightBlue}`,
         icon: <Phone sx={{ fontSize: "45px" }}/>,
         header: "CONTACT US",
-        description: "+1 402 806 7244"
+        description: "+60 19-834 5790"
     },
 ]
 
