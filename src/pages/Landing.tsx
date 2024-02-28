@@ -101,21 +101,30 @@ function RoomCard({section}: {section: roomCardType}) {
     const [hovered, setHovered] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+    const [mobileView, setMobileView] = useState(false);
+    const isMobile = useMediaQuery('(max-width:900px)');
+
+    useEffect(() => {
+        setMobileView(isMobile);
+    }, [isMobile]);
+
     const handleMouseEnter = () => {
         setHovered(true);
-        setCurrentImageIndex(1); // Set to the 1st index image on hover
+        setCurrentImageIndex(1); 
     };
 
     const handleMouseLeave = () => {
         setHovered(false);
-        setCurrentImageIndex(0); // Set back to the default image on leave
+        setCurrentImageIndex(0);
     };
+    
+    console.log(mobileView);
     console.log(hovered);
     
     return (
-        <div style={{ display: "flex", flexDirection: "column", width: "400px", height: "490px", margin: "15px" }}>
+        <div style={{ display: "flex", flexDirection: "column", width: isMobile ? "100%" : "400px", height: "490px", margin: "15px" }}>
             <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{ backgroundImage: `url(${section.images[currentImageIndex]})`,
-                height: "260px", width: "400px", 
+                height: "260px", width: isMobile ? "100%" : "400px", 
                 position: "relative",         
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat", 
@@ -138,12 +147,12 @@ function RoomCard({section}: {section: roomCardType}) {
                     <Typography variant="subtitle1" style={{ marginLeft: "8px" }}>{section.headerText}</Typography>
                 </div>
             </div>
-            <div style={{ backgroundColor: "rgba(0,0,0,0.6)", height:"230px", width: "400px", padding: "10px", color: "white", textAlign: "left" }}>
+            <div style={{ backgroundColor: "rgba(0,0,0,0.6)", height:"230px", width: isMobile ? "100%" : "400px", padding: "10px", color: "white", textAlign: "left" }}>
                 <Typography variant="h6" fontWeight="bold">{section.roomTitle}</Typography>
                 {section.description.map((sentence) => (
                     <Typography variant="subtitle1">{sentence}</Typography>
                 ))}
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "90%", margin: "0 auto" }}>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: isMobile ? "70%" : "90%", margin: "0 auto" }}>
                     <Link sx={{ display: "flex", flexDirection: "row" }}>
                     <Button href="#contact"><Typography sx={{ textDecoration: "none", "&:hover": { cursor: "pointer", textDecoration: `underline solid ${colors.pOrange}` } }} variant="h6" color="white" fontWeight="bold">Contact to Book</Typography></Button>
                     </Link>
@@ -169,9 +178,9 @@ export default function Landing() {
                 <source src={sea} type="video/mp4"/>
             </video>
                 <Navbar />
-                <div style={{ position: "absolute", top: "50%", left: "6%", transform: "translateY(-50%)", textAlign: "left", color: "white", width:"40%", minWidth: "370px" }}>
-                    <Typography variant="h2" fontWeight="bold">Your Private Getaway By The Sea</Typography>
-                    <Typography variant="h6">We are thrilled to extend a warm and heartfelt welcome to you as you step into the enchanting world of Seaside Paradise at Sematan!</Typography>
+                <div style={{ position: "absolute", top: "50%", marginLeft: isMobile ? "19px" : "6%", marginRight: "10px", transform: "translateY(-50%)", textAlign: "left", color: "white", width:"40%", minWidth: "275px" }}>
+                    <Typography variant={isMobile ? "h3" : "h2"} fontWeight="bold">Your Private Getaway By The Sea</Typography>
+                    <Typography variant={isMobile ? "subtitle1" : "h6"} sx={{ wordWrap: 'break-word' }} >We are thrilled to extend a warm and heartfelt welcome to you as you step into the enchanting world of Seaside Paradise at Sematan!</Typography>
                     <Button href="#contact" variant="contained" sx={{marginTop: "15px", backgroundColor: colors.pOrange, color: "white", "&:hover": {backgroundColor: "#e46a00"} }}>Book now</Button>
                 </div>
             </div>
