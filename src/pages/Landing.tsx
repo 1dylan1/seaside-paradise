@@ -19,6 +19,7 @@ import FlatwareIcon from '@mui/icons-material/Flatware';
 import MicrowaveIcon from '@mui/icons-material/Microwave';
 import ChairIcon from '@mui/icons-material/Chair';
 import KitchenIcon from '@mui/icons-material/Kitchen';
+import RamenDiningIcon from '@mui/icons-material/RamenDining';
 
 type infoCardType = {
     color: string,
@@ -214,6 +215,7 @@ export default function Landing() {
                                 <Typography color="white" sx={{paddingBottom: "10px"}}> <CoffeeMakerIcon/> Kettle</Typography>
                                 <Typography color="white" sx={{paddingBottom: "10px"}}> <AcUnitIcon/> Air Conditioning</Typography>                           
                                 <Typography color="white" sx={{paddingBottom: "10px"}}> <AirIcon/> Hair Dryer</Typography>
+                                <Typography color="white" sx={{paddingBottom: "10px"}}> <RamenDiningIcon/> Vending Machines</Typography>
                                 <Typography color="white" sx={{paddingBottom: "10px"}}> <FlatwareIcon/> Dining area (Single)</Typography>
                                 <Typography color="white" sx={{paddingBottom: "10px"}}> <MicrowaveIcon/> Microwave (Chalet)</Typography>
                                 <Typography color="white" sx={{paddingBottom: "10px"}}> <ChairIcon/> Sofa (Chalet)</Typography>
@@ -230,9 +232,10 @@ export default function Landing() {
                                     <Typography color="white" sx={{paddingBottom: "10px"}}> <CoffeeMakerIcon/> Kettle</Typography>
                                     <Typography color="white" sx={{paddingBottom: "10px"}}> <AcUnitIcon/> Air Conditioning</Typography>                           
                                     <Typography color="white" sx={{paddingBottom: "10px"}}> <AirIcon/> Hair Dryer</Typography>
+                                    <Typography color="white" sx={{paddingBottom: "10px"}}> <RamenDiningIcon/> Vending Machines</Typography>
                                 </div>
                                 <div>     
-                                    <Typography color="white" sx={{paddingBottom: "10px"}}> <FlatwareIcon/> Dining area (Single)</Typography>
+                                    <Typography color="white" sx={{paddingBottom: "10px"}}> <FlatwareIcon/> Dining area</Typography>
                                     <Typography color="white" sx={{paddingBottom: "10px"}}> <MicrowaveIcon/> Microwave (Chalet)</Typography>
                                     <Typography color="white" sx={{paddingBottom: "10px"}}> <ChairIcon/> Sofa (Chalet)</Typography>
                                     <Typography color="white" sx={{paddingBottom: "10px"}}> <KitchenIcon/> Mini Fridge (Chalet)</Typography>
@@ -247,7 +250,7 @@ export default function Landing() {
             <div style={{display: "flex", flexDirection: "column", textAlign: "center", margin: "20px", backgroundColor: 'rgba(0, 0, 0, 0.1)'}}>
                 <Typography variant="h4" color="white" fontWeight="bold">Contact Us</Typography>
                 <Typography variant="h6" color="white" style={{paddingTop: "30px"}}>Ready to book your getaway?</Typography>
-                <div id="contact-section" style={{display: "flex", flexDirection: "column"}}>
+                <div id="contact" style={{display: "flex", flexDirection: "column"}}>
                     <div>
                         <Typography variant={ isMobile ? "subtitle1" : "h5"} color="white" fontWeight="bold" style={{paddingTop: "30px"}}>Call Us or Whatsapp</Typography>
                         <a href="tel:+60198345790"><Typography variant="h6" color="white">+60 19-834 5790</Typography></a>
