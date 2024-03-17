@@ -253,7 +253,7 @@ export default function Landing() {
                 <div id="contact" style={{display: "flex", flexDirection: "column"}}>
                     <div>
                         <Typography variant={ isMobile ? "subtitle1" : "h5"} color="white" fontWeight="bold" style={{paddingTop: "30px"}}>Call Us or Whatsapp</Typography>
-                        <a href="tel:+60198345790"><Typography variant="h6" color="white">+60 19-834 5790</Typography></a>
+                        <a href="tel:+60198345790"><Typography variant="h6" color="white">+60 12-214 5790</Typography></a>
                     </div>
                     <div>
                         <Typography variant={ isMobile ? "subtitle1" : "h5"}  color="white" fontWeight="bold" style={{paddingTop: "30px"}}>Email</Typography>
