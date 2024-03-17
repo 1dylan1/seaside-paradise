@@ -81,7 +81,7 @@ const infoInformation: infoCardType[] = [
         color: `${colors.pLightBlue}`,
         icon: <Phone sx={{ fontSize: "45px" }}/>,
         header: "CONTACT US",
-        description: "+60 19-834 5790"
+        description: "+60 12-214 5790"
     },
 ]
 
