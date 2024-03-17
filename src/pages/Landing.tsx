@@ -216,7 +216,7 @@ export default function Landing() {
                                 <Typography color="white" sx={{paddingBottom: "10px"}}> <AcUnitIcon/> Air Conditioning</Typography>                           
                                 <Typography color="white" sx={{paddingBottom: "10px"}}> <AirIcon/> Hair Dryer</Typography>
                                 <Typography color="white" sx={{paddingBottom: "10px"}}> <RamenDiningIcon/> Vending Machines</Typography>
-                                <Typography color="white" sx={{paddingBottom: "10px"}}> <FlatwareIcon/> Dining area (Single)</Typography>
+                                <Typography color="white" sx={{paddingBottom: "10px"}}> <FlatwareIcon/> Dining area (Chalet)</Typography>
                                 <Typography color="white" sx={{paddingBottom: "10px"}}> <MicrowaveIcon/> Microwave (Chalet)</Typography>
                                 <Typography color="white" sx={{paddingBottom: "10px"}}> <ChairIcon/> Sofa (Chalet)</Typography>
                                 <Typography color="white" sx={{paddingBottom: "10px"}}> <KitchenIcon/> Mini Fridge (Chalet)</Typography>
@@ -235,7 +235,7 @@ export default function Landing() {
                                     <Typography color="white" sx={{paddingBottom: "10px"}}> <RamenDiningIcon/> Vending Machines</Typography>
                                 </div>
                                 <div>     
-                                    <Typography color="white" sx={{paddingBottom: "10px"}}> <FlatwareIcon/> Dining area</Typography>
+                                    <Typography color="white" sx={{paddingBottom: "10px"}}> <FlatwareIcon/> Dining area (Chalet) </Typography>
                                     <Typography color="white" sx={{paddingBottom: "10px"}}> <MicrowaveIcon/> Microwave (Chalet)</Typography>
                                     <Typography color="white" sx={{paddingBottom: "10px"}}> <ChairIcon/> Sofa (Chalet)</Typography>
                                     <Typography color="white" sx={{paddingBottom: "10px"}}> <KitchenIcon/> Mini Fridge (Chalet)</Typography>
